@@ -3,6 +3,7 @@ from os.path import join
 
 WINDOW_WIDTH, WINDOW_HEIGHT = 1280, 720
 SIZE = {'paddle': (40,100), 'ball': (30,30)}
+POSITION = {'player': (WINDOW_WIDTH - 50, WINDOW_HEIGHT / 2), 'opp': (50, WINDOW_HEIGHT / 2)}
 SPEED = {'player':500, 'opp': 250, 'ball': 450}
 COLORS = {
     'paddle': '#ee322c',
