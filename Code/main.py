@@ -2,6 +2,7 @@ from settings import *
 from sprites import *
 from groups import AllSprites
 import json
+import asyncio
 
 class Game:
     def __init__(self):
@@ -94,7 +95,7 @@ class Game:
             self.state = 'game'
 
 
-    def run(self):
+    async def run(self):
         while self.running:
             dt = self.clock.tick() / 1000  # miliseconds
             for event in pygame.event.get():
@@ -119,8 +120,12 @@ class Game:
             
             pygame.display.update()
 
+            await asyncio.sleep(0)
+
         pygame.quit()
 
-if __name__ == '__main__':
+async def main():
     game = Game()
-    game.run()
+    await game.run()
+
+asyncio.run(main()) 
