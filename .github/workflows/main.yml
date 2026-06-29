@@ -23,7 +23,7 @@ jobs:
 
       - name: Build Web Version
         run: |
-          python -m pygbag --build Code 
+          python -m pygbag --build code 
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
