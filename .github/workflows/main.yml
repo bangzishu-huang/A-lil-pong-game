@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  
+      - main  # Change this to 'master' if your branch is named master
 
 permissions:
   contents: write
@@ -23,10 +23,10 @@ jobs:
 
       - name: Build Web Version
         run: |
-          python -m pygbag --build code  # <-- Changed from '.' to 'code'
+          python -m pygbag --build Code 
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: code/build/web   
+          folder: code/build/web      
           branch: gh-pages
