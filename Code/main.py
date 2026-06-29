@@ -1,8 +1,15 @@
+# /// script
+# dependencies = [
+#     "pygame-ce",
+# ]
+# /// 
+
 from settings import *
 from sprites import *
 from groups import AllSprites
 import json
 import asyncio
+import os
 
 class Game:
     def __init__(self):
@@ -22,11 +29,13 @@ class Game:
         Opp((self.all_sprites, self.paddle_sprites), self.ball)
 
         # score stuff
+        
         try:
             with open(join('data', 'score.txt')) as score_file:
                 self.score = json.load(score_file)
         except:
             self.score = {'player':0, 'opp': 0}  # for original start
+        # self.score = {'player': 0, 'opp': 0}
         self.font = pygame.font.Font(None, 180)
 
         # startup menu
@@ -40,6 +49,7 @@ class Game:
         self.new_game_rect.center = (center_x, WINDOW_HEIGHT / 2 + 130)
 
     def save_score(self):
+        os.makedirs('data', exist_ok= True)
         with open(join('data', 'score.txt'), 'w') as score_file:
             json.dump(self.score, score_file)
 
