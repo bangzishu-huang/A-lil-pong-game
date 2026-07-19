@@ -3,6 +3,12 @@ Kind of a pong game that I will recreate from absolute scratch. This will be a s
 
 This is probably the first game I will be using pygame on, and I had to learn how to utilize a lot of the features. This was a pretty good learning process for me and I was really happy to finish the game!
 
+# Tech Slack
+- Frontend: Python
+- Hosting: GitHub Pages
+- Version Control: GitHub
+- Development Tools: Visual Studio Code, Pygame-CE, Pygbag
+  
 # Features
 While this game is pretty straightforward a couple of the features include:
 - Movable player paddle (using your up and down arrow keys)
